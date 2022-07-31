@@ -1,0 +1,70 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 30%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 8px;
+    font-size: 32px;
+  }
+  
+  th {
+    text-align: center;
+    background-color: rgb(117, 201, 250);
+  }
+  
+  tr:nth-child(odd) {
+    background-color: rgb(205, 235, 253);
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(169, 228, 255);
+  }
+  
+  form {
+    display: flex;
+    gap: 5px;
+  }
+  
+  form td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  form * {
+    font-size: 28px;
+  }
+
+  .button {
+    text-align: center;
+  }
+
+@media only screen and (max-width: 960px) {
+  .app-container {
+    max-width: 100px;
+  }
+
+  table {
+    width: 100px;
+  }
+
+  th,
+  td {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 8px;
+    font-size: 20px;
+  }
+}
