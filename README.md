@@ -1,6 +1,6 @@
 # TCIT-Challenge
 
-## Before anything please run command npm install !!
+## Before anything please run command npm install on each folder (api and client) !!
 
 ## 1) TO START BACK-END SERVER AND DATABASE: Go to api folder (cd api), then run npm start command (changes are beeing listened by nodemon on PORT: 3001)
 
