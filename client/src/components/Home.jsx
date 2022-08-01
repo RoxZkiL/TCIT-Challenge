@@ -5,11 +5,11 @@ import PostForm from "./PostForm";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <SearchPost />
       <TableList />
       <PostForm />
-    </div>
+    </>
   );
 };
 

@@ -29,6 +29,14 @@ const PostForm = () => {
     window.location.reload(false);
   };
 
+  const clickHandler = () => {
+    if (!input.name.length || !input.description.length) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <div className="containerS">
@@ -39,7 +47,6 @@ const PostForm = () => {
           placeholder="Nombre"
           value={input.name}
           onChange={handleInputChange}
-          required
         />
         <input
           className="inputSize2"
@@ -48,9 +55,14 @@ const PostForm = () => {
           placeholder="Descripción"
           value={input.description}
           onChange={handleInputChange}
-          required
         />
-        <Button type="submit" variant="dark" id="button-addon2" size="lg">
+        <Button
+          type="submit"
+          variant="dark"
+          id="button-addon2"
+          size="lg"
+          disabled={clickHandler()}
+        >
           Crear
         </Button>
       </div>

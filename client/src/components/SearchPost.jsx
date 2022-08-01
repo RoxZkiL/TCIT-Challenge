@@ -28,6 +28,7 @@ const SearchPost = () => {
         placeholder="Filtro de Nombre"
         onChange={(e) => handleInputChange(e)}
         aria-describedby="basic-addon2"
+        required
       />
 
       <Button
@@ -36,6 +37,7 @@ const SearchPost = () => {
         type="submit"
         onClick={(e) => handleSubmit(e)}
         size="lg"
+        required
       >
         Buscar
       </Button>

@@ -1,11 +1,11 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost, getPosts } from "../redux/actions/index";
 import ChargeAllPost from "./ChargeAllPost";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import "../styles/tableList.css";
+import "../styles/TableList.css";
+import Alert from "react-bootstrap/Alert";
 
 const TableList = () => {
   const dispatch = useDispatch();
@@ -25,6 +25,9 @@ const TableList = () => {
   if (allPosts.length >= post.length) {
     return (
       <div className="containerX">
+        {!allPosts.length && (
+          <Alert variant="dark">Todavía no hay posts para mostrar</Alert>
+        )}
         <Table striped bordered hover variant="dark" responsive="xl">
           <thead>
             <tr>

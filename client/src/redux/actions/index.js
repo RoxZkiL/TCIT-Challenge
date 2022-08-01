@@ -10,7 +10,6 @@ export const getPosts = () => {
       });
     } catch (error) {
       console.log(error.response.data);
-      alert(error.response.data.message);
     }
   };
 };
@@ -25,7 +24,7 @@ export const createPost = (payload) => {
       return createPost;
     } catch (error) {
       console.log(error);
-      alert(error.response.data.message);
+      // alert(error.response.data.message);
     }
   };
 };
