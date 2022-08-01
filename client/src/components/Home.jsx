@@ -5,7 +5,7 @@ import PostForm from "./PostForm";
 
 const Home = () => {
   return (
-    <div className="app-container">
+    <div>
       <SearchPost />
       <TableList />
       <PostForm />

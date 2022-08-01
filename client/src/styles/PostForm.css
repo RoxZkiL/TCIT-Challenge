@@ -1,0 +1,36 @@
+.containerS {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.inputSize1 {
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 500px;
+}
+
+.inputSize2 {
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 1000px;
+}
+
+@media only screen and (max-width: 960px) {
+    .containerS {
+        width: 390px;
+    }
+
+    .inputSize1 {
+        width: 120px;
+    }
+    .inputSize2 {
+        width: 160px;
+    }
+}

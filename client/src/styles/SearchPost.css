@@ -1,0 +1,23 @@
+.containerP {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.inputSize {
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 700px;
+}
+
+@media only screen and (max-width: 960px) {
+    .containerP {
+        width: 390px;
+    }
+    .inputSize {
+        width: 200px;
+    }
+}

@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deletePost, getPosts } from "../actions/index";
+import { deletePost, getPosts } from "../redux/actions/index";
 import ChargeAllPost from "./ChargeAllPost";
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 import "../styles/tableList.css";
 
 const TableList = () => {
@@ -22,8 +24,8 @@ const TableList = () => {
 
   if (allPosts.length >= post.length) {
     return (
-      <div className="app-container">
-        <table>
+      <div className="containerX">
+        <Table striped bordered hover variant="dark" responsive="xl">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -37,20 +39,20 @@ const TableList = () => {
                 <td>{post.name}</td>
                 <td>{post.description}</td>
                 <td className="button">
-                  <button onClick={() => handleDelete(post.id)}>
+                  <Button variant="dark" onClick={() => handleDelete(post.id)}>
                     Eliminar
-                  </button>
+                  </Button>
                 </td>
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
       </div>
     );
   } else {
     return (
-      <div className="app-container">
-        <table>
+      <div>
+        <Table striped bordered hover variant="dark" responsive="xl">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -64,14 +66,14 @@ const TableList = () => {
                 <td>{post.name}</td>
                 <td>{post.description}</td>
                 <td className="button">
-                  <button onClick={() => handleDelete(post.id)}>
+                  <Button variant="dark" onClick={() => handleDelete(post.id)}>
                     Eliminar
-                  </button>
+                  </Button>
                 </td>
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
         <ChargeAllPost />
       </div>
     );

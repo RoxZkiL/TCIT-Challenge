@@ -1,4 +1,18 @@
-.app-container {
+  .containerX {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 960px) { 
+  .containerX {
+    width: 388px;
+  }
+}
+
+
+/* SE ENTIENDE QUE DEJAR ARCHIVOS SIN UTILIZAR ES UNA MALA PRACTICA Y NO ES RECOMENDADO, ESTE ARCHIVO ES PARA
+DEJAR CONSTANCIA DE QUE SE TRABAJAR CON CSS PURO TAMBIEN. */
+
+/* .app-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -67,4 +81,4 @@
     padding: 8px;
     font-size: 20px;
   }
-}
+} */
