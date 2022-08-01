@@ -1,6 +1,6 @@
 const { connection } = require("../../database/db");
 
-const getPosts = async (req, res) => {
+const getPosts = async (_req_, res) => {
   try {
     const response = await connection.query("SELECT * FROM posts");
     if (response.rows.length) {
@@ -44,7 +44,10 @@ const deletePost = async (req, res) => {
     );
     res
       .status(200)
-      .json({ message: "Post successfully deleted", post: response.rows });
+      .json({
+        message: "Post successfully deleted",
+        post_deleted: response.rows,
+      });
   } catch (error) {
     console.log(error);
   }

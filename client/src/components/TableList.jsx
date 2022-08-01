@@ -6,9 +6,15 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import "../styles/TableList.css";
 import Alert from "react-bootstrap/Alert";
+import Modal from "react-bootstrap/Modal";
+import { useState } from "react";
 
 const TableList = () => {
   const dispatch = useDispatch();
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const allPosts = useSelector((state) => state.posts);
   const post = useSelector((state) => state.post);
@@ -42,9 +48,32 @@ const TableList = () => {
                 <td>{post.name}</td>
                 <td>{post.description}</td>
                 <td className="button">
-                  <Button variant="dark" onClick={() => handleDelete(post.id)}>
+                  <Button variant="dark" onClick={handleShow}>
                     Eliminar
                   </Button>
+
+                  <Modal
+                    show={show}
+                    onHide={handleClose}
+                    backdrop="static"
+                    keyboard={false}
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>Eliminar Post</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>¿Deseas eliminar {post.name}?</Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="dark" onClick={handleClose}>
+                        Cerrar
+                      </Button>
+                      <Button
+                        variant="dark"
+                        onClick={() => handleDelete(post.id)}
+                      >
+                        Confirmar
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </td>
               </tr>
             ))}
@@ -69,9 +98,32 @@ const TableList = () => {
                 <td>{post.name}</td>
                 <td>{post.description}</td>
                 <td className="button">
-                  <Button variant="dark" onClick={() => handleDelete(post.id)}>
+                  <Button variant="dark" onClick={handleShow}>
                     Eliminar
                   </Button>
+
+                  <Modal
+                    show={show}
+                    onHide={handleClose}
+                    backdrop="static"
+                    keyboard={false}
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>Eliminar Post</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>¿Deseas eliminar este post?</Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="dark" onClick={handleClose}>
+                        Cerrar
+                      </Button>
+                      <Button
+                        variant="dark"
+                        onClick={() => handleDelete(post.id)}
+                      >
+                        Confirmar
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </td>
               </tr>
             ))}

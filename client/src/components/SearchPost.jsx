@@ -20,28 +20,29 @@ const SearchPost = () => {
   };
 
   return (
-    <div className="containerP">
-      <input
-        className="inputSize"
-        value={name}
-        type="text"
-        placeholder="Filtro de Nombre"
-        onChange={(e) => handleInputChange(e)}
-        aria-describedby="basic-addon2"
-        required
-      />
+    <form>
+      <div className="containerP">
+        <input
+          className="inputSize"
+          value={name}
+          type="text"
+          placeholder="Filtro de Nombre"
+          onChange={(e) => handleInputChange(e)}
+          required
+        />
 
-      <Button
-        variant="dark"
-        id="button-addon2"
-        type="submit"
-        onClick={(e) => handleSubmit(e)}
-        size="lg"
-        required
-      >
-        Buscar
-      </Button>
-    </div>
+        <Button
+          variant="dark"
+          id="button-addon2"
+          type="submit"
+          onClick={(e) => handleSubmit(e)}
+          size="lg"
+          required
+        >
+          Buscar
+        </Button>
+      </div>
+    </form>
   );
 };
 

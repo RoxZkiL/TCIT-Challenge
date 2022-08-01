@@ -23,8 +23,7 @@ export const createPost = (payload) => {
       );
       return createPost;
     } catch (error) {
-      console.log(error);
-      // alert(error.response.data.message);
+      console.log(error.response.data);
     }
   };
 };
@@ -56,7 +55,7 @@ export function getPostByName(payload) {
         payload: postName.data,
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
       alert("Post not found");
     }
   };
