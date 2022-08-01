@@ -51,7 +51,6 @@ const TableList = () => {
                   <Button variant="dark" onClick={handleShow}>
                     Eliminar
                   </Button>
-
                   <Modal
                     show={show}
                     onHide={handleClose}
